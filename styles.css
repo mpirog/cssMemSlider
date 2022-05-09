@@ -91,6 +91,25 @@ body {
     display: flex;
 }
 
+.descriptions {
+    position: fixed;
+    display: flex;
+    width: calc(var(--width) - 150px);
+
+    padding: 5px;
+    overflow: hidden;
+}
+
+.descriptions-wrap {
+    display: flex;
+    position: relative;
+    transition: 1s;
+}
+
+.desc {
+    width: var(--width);
+}
+
 .controls {
     display: flex;
     width: 100%;
@@ -116,16 +135,29 @@ label:hover {
     background-color: aliceblue;
 }
 
+#button1:checked ~ .wrapper-controls .descriptions .descriptions-wrap,
 #button1:checked ~ .wrapper .slider-wrapper {
     transform: translateX(0);
+}
+
+#button2:checked ~ .wrapper-controls .descriptions .descriptions-wrap {
+    transform: translateX(calc((var(--width)) * -1));
 }
 
 #button2:checked ~ .wrapper .slider-wrapper {
     transform: translateX(calc(var(--width) * -1  - var(--gap)));
 }
 
+#button3:checked ~ .wrapper-controls .descriptions .descriptions-wrap {
+    transform: translateX(calc(var(--width) * -2));
+}
+
 #button3:checked ~ .wrapper .slider-wrapper {
     transform: translateX(calc(var(--width) * -2  - (var(--gap) * 2)));
+}
+
+#button4:checked ~ .wrapper-controls .descriptions .descriptions-wrap {
+    transform: translateX(calc(var(--width) * -3));
 }
 
 #button4:checked ~ .wrapper .slider-wrapper {
