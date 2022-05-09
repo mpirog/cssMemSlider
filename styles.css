@@ -1,0 +1,73 @@
+:root {
+    --width: 700px;
+    --gap: 30px;
+}
+
+body {
+    max-width: 1280px;
+    min-height: 100vh;
+
+    padding: 0;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+    background-color: black;
+
+    color: aliceblue;
+}
+
+.conteiner {
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+}
+
+.wrapper {
+    display: flex;
+
+    width: var(--width);
+
+    margin: auto;
+    overflow: hidden;
+}
+
+.slider-wrapper {
+    display: flex;
+    justify-content: center;
+
+    position: relative;
+
+    gap: var(--gap);
+}
+
+.slide {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+}
+
+.img {
+    width: var(--width);
+    height: 600px;
+}
+
+.slider-wrapper [data-slide="1"] .img {
+    background-image: url("./assets/adidas.jpg");
+}
+
+.slider-wrapper [data-slide="2"] .img {    
+    background: url("./assets/lego.jpg") ;
+}
+
+.slider-wrapper [data-slide="3"] .img {    
+    background: url("./assets/levis.jpg") ;
+}
+
+.slider-wrapper [data-slide="4"] .img {    
+    background: url("./assets/loreal.jpg") ;
+}
