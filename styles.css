@@ -1,5 +1,6 @@
 :root {
     --width: 700px;
+    --height: 700px;
     --gap: 30px;
 }
 
@@ -59,7 +60,7 @@ body {
 
 .img {
     width: var(--width);
-    height: 600px;
+    height: var(--height);
 }
 
 .slider-wrapper [data-slide="1"] .img {
@@ -84,6 +85,8 @@ body {
 .slider-wrapper [data-slide="4"] .img {
     background-size: cover;
     background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
     border-radius: 5px;
 }
 
@@ -92,7 +95,7 @@ body {
 }
 
 .descriptions {
-    position: fixed;
+    position: relative;
     display: flex;
     width: calc(var(--width) - 150px);
 
@@ -177,4 +180,34 @@ label:hover {
 #button4:checked:hover ~ .wrapper-controls .controls .label4 {
     cursor: auto;
     border: 3px solid rebeccapurple;
+}
+
+@media (max-width: 720px) {
+    :root {
+        --width: 400px;
+        --height: 400px;
+    }
+
+    .wrapper-controls {
+        flex-direction: column-reverse;
+    }
+
+    .desc {
+        text-align: center;
+    }
+
+    .descriptions {        
+        width: calc(var(--width));
+    }
+
+    .controls {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 410px) {    
+    :root {
+        --width: 300px;
+        --height: 300px;
+    }
 }
