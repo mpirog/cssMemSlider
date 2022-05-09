@@ -3,13 +3,17 @@
     --gap: 30px;
 }
 
+input {
+    display: none;
+}
+
 body {
     max-width: 1280px;
     min-height: 100vh;
 
     padding: 0;
     margin: 0 auto;
-
+    
     display: flex;
     flex-direction: column;
 
@@ -30,7 +34,7 @@ body {
     display: flex;
 
     width: var(--width);
-
+    
     margin: auto;
     overflow: hidden;
 }
@@ -38,7 +42,7 @@ body {
 .slider-wrapper {
     display: flex;
     justify-content: center;
-
+    
     position: relative;
 
     gap: var(--gap);
@@ -47,7 +51,7 @@ body {
 .slide {
     display: flex;
     flex-direction: column;
-
+    
     align-items: center;
 }
 
@@ -70,4 +74,27 @@ body {
 
 .slider-wrapper [data-slide="4"] .img {    
     background: url("./assets/loreal.jpg") ;
+}
+
+.wrapper-controls {
+    display: flex;
+}
+
+.controls {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+label {
+    height: 15px;
+    width: 15px;
+
+    margin: 5px;
+
+    border: 3px solid rebeccapurple;
+    background-color: rebeccapurple;
+    border-radius: 50%;
+
+    transition: 0.5s;
 }
