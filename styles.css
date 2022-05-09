@@ -37,6 +37,7 @@ body {
     
     margin: auto;
     overflow: hidden;
+    border-radius: 5px;
 }
 
 .slider-wrapper {
@@ -46,6 +47,7 @@ body {
     position: relative;
 
     gap: var(--gap);
+    transition: 1s;
 }
 
 .slide {
@@ -106,4 +108,41 @@ label {
     border-radius: 50%;
 
     transition: 0.5s;
+}
+
+label:hover {
+    cursor: pointer;
+    border: 3px solid aliceblue;
+    background-color: aliceblue;
+}
+
+#button1:checked ~ .wrapper .slider-wrapper {
+    transform: translateX(0);
+}
+
+#button2:checked ~ .wrapper .slider-wrapper {
+    transform: translateX(calc(var(--width) * -1  - var(--gap)));
+}
+
+#button3:checked ~ .wrapper .slider-wrapper {
+    transform: translateX(calc(var(--width) * -2  - (var(--gap) * 2)));
+}
+
+#button4:checked ~ .wrapper .slider-wrapper {
+    transform: translateX(calc(var(--width) * -3  - (var(--gap) * 3)));
+}
+
+#button1:checked ~ .wrapper-controls .controls .label1,
+#button2:checked ~ .wrapper-controls .controls .label2,
+#button3:checked ~ .wrapper-controls .controls .label3,
+#button4:checked ~ .wrapper-controls .controls .label4 {
+    background-color: transparent;
+}
+
+#button1:checked:hover ~ .wrapper-controls .controls .label1,
+#button2:checked:hover ~ .wrapper-controls .controls .label2,
+#button3:checked:hover ~ .wrapper-controls .controls .label3,
+#button4:checked:hover ~ .wrapper-controls .controls .label4 {
+    cursor: auto;
+    border: 3px solid rebeccapurple;
 }
