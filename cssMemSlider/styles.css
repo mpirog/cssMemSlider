@@ -1,0 +1,192 @@
+:root {
+    --width: 70vw;
+    --height: 70vh;
+}
+
+input {
+    display: none;
+}
+
+body {
+    max-width: 70vw;
+    min-height: 100vh;
+
+    padding: 0;
+    margin: 0 auto;
+    
+    display: flex;
+    flex-direction: column;
+
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+    background-color: black;
+
+    color: aliceblue;
+
+    font-size: 1.2rem;
+}
+
+.conteiner {
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+}
+
+.wrapper {
+    display: flex;
+
+    width: var(--width);
+    
+    margin: auto;
+    overflow: hidden;
+    border-radius: 1rem;
+}
+
+.slider-wrapper {
+    display: flex;
+    justify-content: center;
+    transition: 1s;
+}
+
+.slide {
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+
+    background-color: rgba(239, 241, 241, 0.753);
+}
+
+.img {
+    width: var(--width);
+    height: var(--height);
+    border-radius: 1rem;
+}
+
+.slider-wrapper [data-slide="1"] .img {
+    background-image: url("./assets/adidas.jpg");
+}
+
+.slider-wrapper [data-slide="2"] .img {    
+    background: url("./assets/lego.jpg") ;
+}
+
+.slider-wrapper [data-slide="3"] .img {    
+    background: url("./assets/levis.jpg") ;
+}
+
+.slider-wrapper [data-slide="4"] .img {    
+    background: url("./assets/loreal.jpg") ;
+}
+
+.slider-wrapper [data-slide="1"] .img,
+.slider-wrapper [data-slide="2"] .img,
+.slider-wrapper [data-slide="3"] .img,
+.slider-wrapper [data-slide="4"] .img {
+    background-size: cover;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius: 1rem;
+}
+
+.wrapper-controls {
+    display: flex;
+    justify-content: space-between;
+    width: var(--width);
+}
+
+.descriptions {
+    display: flex;
+    width: calc(var(--width) - 15vw);
+
+    padding: 0.5vw;
+    overflow: hidden;
+}
+
+.descriptions-wrap {
+    display: flex;
+    transition: 1s;
+}
+
+.desc {
+    width: var(--width);
+}
+
+.controls {
+    display: flex;
+}
+
+.control {    
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 50%;
+    border: 0.3rem solid rebeccapurple;
+    background-color: rebeccapurple;
+
+    transition: 0.5s;
+}
+
+label {    
+    display: flex;    
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0.5rem;
+    border-radius: 50%;
+}
+
+label:hover {
+    cursor: pointer;
+}
+
+label:hover .control {
+    background-color: aliceblue;
+    border: 0.3rem solid aliceblue;
+}
+
+#button1:checked ~ .wrapper-controls .descriptions .descriptions-wrap,
+#button1:checked ~ .wrapper .slider-wrapper {
+    transform: translateX(0);
+}
+
+#button2:checked ~ .wrapper-controls .descriptions .descriptions-wrap,
+#button2:checked ~ .wrapper .slider-wrapper {
+    transform: translateX(calc((var(--width)) * -1));
+}
+
+#button3:checked ~ .wrapper-controls .descriptions .descriptions-wrap,
+#button3:checked ~ .wrapper .slider-wrapper {
+    transform: translateX(calc(var(--width) * -2));
+}
+
+#button4:checked ~ .wrapper-controls .descriptions .descriptions-wrap,
+#button4:checked ~ .wrapper .slider-wrapper {
+    transform: translateX(calc(var(--width) * -3));
+}
+
+#button1:checked ~ .wrapper-controls .controls .label1 .control,
+#button2:checked ~ .wrapper-controls .controls .label2 .control,
+#button3:checked ~ .wrapper-controls .controls .label3 .control,
+#button4:checked ~ .wrapper-controls .controls .label4 .control {
+    background-color: transparent;
+}
+
+@media (max-width: 720px) {
+    .wrapper-controls {
+        flex-direction: column-reverse;
+    }
+
+    .desc {
+        text-align: center;
+    }
+
+    .descriptions {        
+        width: calc(var(--width));
+    }
+
+    .controls {
+        justify-content: center;
+    }
+}
